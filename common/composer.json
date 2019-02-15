@@ -1,0 +1,16 @@
+{
+    "name": "zh/common",
+    "description": "ceshi",
+    "authors": [
+        {
+            "name": "zhenglei",
+            "email": "1085133991@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Zl\\Common\\": "src/"
+        }
+    }
+}
