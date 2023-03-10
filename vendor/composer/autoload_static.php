@@ -16,7 +16,7 @@ class ComposerStaticInit2ec913d8e1cf2c396a96a16fdc65d097
     public static $prefixDirsPsr4 = array (
         'Zl\\Common\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src',
+            0 => __DIR__ . '/../..',
         ),
     );
 
