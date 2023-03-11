@@ -7,10 +7,31 @@
             "email": "1085133991@qq.com"
         }
     ],
-    "require": {},
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1.3",
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "laravel/framework": "5.8.*",
+        "phpunit/phpunit": "^7.0",
+        "barryvdh/laravel-ide-helper": "^2.8"
+    },
     "autoload": {
         "psr-4": {
             "Zl\\Common\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zl\\Common\\YiMqServiceProvider"
+            ]
         }
     }
 }
