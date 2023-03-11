@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 
-class tmMigrationUpgrade extends Command
+class YiMqMigrationUpgrade extends Command
 {
     protected $signature = 'tm:migration:upgrade ${tag}';
     protected $description = '数据库结构升级 tag: support_parent_subtask';
@@ -36,7 +36,7 @@ class tmMigrationUpgrade extends Command
             $table->unsignedBigInteger('message_id')->change();
             $this->info('Change column: tm_messages.message_id to unsignedBigInteger');
         });
-     }
+    }
 
 
 
