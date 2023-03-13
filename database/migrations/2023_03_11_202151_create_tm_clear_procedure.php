@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateYimqClearProcedure extends Migration
+class CreateTmClearProcedure extends Migration
 {
     /**
      * Run the migrations.
@@ -35,7 +35,7 @@ END IF;
 	set i = i+1;
 	END WHILE;
 	SELECT length as length;
-END       
+END
         ";
 
         $pdo = \DB::connection()->getPdo();

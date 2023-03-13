@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateYimqProcessesTable extends Migration
+class CreateTMProcessesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateYimqProcessesTable extends Migration
      */
     public function up()
     {
-        Schema::create('yimq_processes', function (Blueprint $table) {
+        Schema::create('tm_processes', function (Blueprint $table) {
             $table->unsignedBigInteger('id')->primary();
             $table->string('producer',20)->index();
             $table->unsignedBigInteger('message_id')->index('message_id');
@@ -33,6 +33,6 @@ class CreateYimqProcessesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('yimq_processes');
+        Schema::dropIfExists('tm_processes');
     }
 }

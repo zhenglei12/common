@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateYimqSubtasksTable extends Migration
+class CreateTmSubtasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateYimqSubtasksTable extends Migration
      */
     public function up()
     {
-        Schema::create('yimq_subtasks', function (Blueprint $table) {
+        Schema::create('tm_subtasks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('subtask_id')->unique();
             $table->unsignedBigInteger('message_id')->index('message_id');
@@ -31,6 +31,6 @@ class CreateYimqSubtasksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('yimq_subtasks');
+        Schema::dropIfExists('tm_subtasks');
     }
 }
