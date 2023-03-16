@@ -13,20 +13,20 @@ class YiMqActorConfig
     protected $broadcastListeners = [];
     protected $schedules = [];
     function get(){
-        if(!is_array(config('yimq.processors'))){
-            throw new YiMqSystemException('yimq config processors define error.');
+        if(!is_array(config('tm.processors'))){
+            throw new YiMqSystemException('tm config processors define error.');
         }
-        foreach (config('yimq.processors') as $alias => $processorClass){
+        foreach (config('tm.processors') as $alias => $processorClass){
             $processorObject = resolve($processorClass);
             $item = $processorObject->getOptions();
-            $item['processor'] = config('yimq.actor_name').'.'.$alias;
+            $item['processor'] = config('tm.actor_name').'.'.$alias;
             array_push($this->processors,$item);
         }
 
-        if(!is_array(config('yimq.broadcast_listeners'))){
-            throw new YiMqSystemException('yimq config broadcast_listeners define error.');
+        if(!is_array(config('tm.broadcast_listeners'))){
+            throw new YiMqSystemException('tm config broadcast_listeners define error.');
         }
-        foreach (config('yimq.broadcast_listeners',[]) as $class => $topic){
+        foreach (config('tm.broadcast_listeners',[]) as $class => $topic){
             $listenerObject =  resolve($class);
             $item['processor'] = $class;
             $item['topic'] = $topic;
@@ -35,7 +35,7 @@ class YiMqActorConfig
         }
 
         return [
-            'actor_name' => config('yimq.actor_name'),
+            'actor_name' => config('tm.actor_name'),
             'processors' => $this->processors,
             'broadcast_listeners' => $this->broadcastListeners
         ];

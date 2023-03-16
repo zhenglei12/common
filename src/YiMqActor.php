@@ -57,6 +57,7 @@ class YiMqActor
 
     public function messageCheck($context){
 //        $messageModel = MessageModel::lockForUpdate()->where('message_id',$context['message_id'])->first();
+        \Log::info("messageCheck", [$context]);
         $messageModel = MessageModel::lock('for update nowait')->where('message_id',$context['message_id'])->first();
         if(!isset($messageModel)){
             // return ['status'=> MessageServerStatus::CANCELED];

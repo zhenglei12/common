@@ -10,7 +10,7 @@ use Zl\Common\Constants\MessageType;
 
 class Message extends Model
 {
-    protected $table = 'yimq_messages';
+    protected $table = 'tm_messages';
     protected $fillable = [
         'id',
         'message_id',

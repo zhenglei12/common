@@ -157,7 +157,7 @@ class YiMqClient
                 $requestOptions['timeout'] = $context['options']['timeout']/1000+1;
             }
             $result = $this->guzzleClient->post($this->actions[$action],$requestOptions);
-            \Log::info("YiMQ.Client",$logContent);
+            \Log::info("TM.Client",$logContent);
         } catch (\Exception $e) {
 
             $exception =  new YiMqHttpRequestException($e);
@@ -169,7 +169,7 @@ class YiMqClient
             if($exception->hasResponse()){
                 $logContent['response'] = $exception->getData();
             }
-            \Log::error("YiMQ.Client",$logContent);
+            \Log::error("TM.Client",$logContent);
             throw $exception;
         }
 
